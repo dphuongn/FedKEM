@@ -28,14 +28,14 @@ access within Docker containers. This can be found at
 [NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
 
 
-### Build your images for FedKEMF
+### Build your images for FedKEM
 
 Go to where the Dockerfile located `Docker/Dockerfile`. The Docker configuration is written in the Dockerfile.
 
 To build your local image, you could simply run the following command:
 
 ```bash
-$  docker build --tag FedKEMF .
+$  docker build --tag FedKEM .
 ```
 To see a list of images we have on our local machine,  simply run the `docker images` command.
 
@@ -57,7 +57,7 @@ docker run --rm -it --init \
   --ipc=host \
   --user="$(id -u):$(id -g)" \
   --volume="$PWD:/app" \
-  FedKEMF python3 knowlege_aggregation.py --comm_round=200 --model='resnet20' --dataset=cifar10 --batch-size=128 --epochs=10 --n_parties=100 --sample=0.5 --logdir='./logs/'
+  FedKEM python3 knowlege_aggregation.py --comm_round=200 --model='resnet20' --dataset=cifar10 --batch-size=128 --epochs=10 --n_parties=100 --sample=0.5 --logdir='./logs/'
 
   ```
 

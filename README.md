@@ -1,5 +1,5 @@
-# FedKEMF 
-FedKEMF: Resource-aware **Fed**erated Learning using  **K**nowledge **E**xtraction and **M**ulti-model **F**usion
+# FedKEM
+FedKEM: Enhancing Heterogeneous **Fed**erated Learning with **K**nowledge Extraction and **M**ulti-Model **F**usion
 ## Dependencies
 
 Current code base is tested under following environment:
@@ -12,9 +12,9 @@ Current code base is tested under following environment:
 6. matplotlib 3.5.3
 
 
-## FedKEMF Overview –– Efficient federated learning
-FedKEMF is a resource-aware FL algorithm, which aggregate an ensemble of local knowledge extracted from edge models. 
-Different from exsisting works which aggregate the weights of each local model, FEDKEMF is distilled into a robust global knowledge as the server model through knowledge distillation.![](./logs/figure/overview.png)
+## FedKEM Overview –– Efficient federated learning
+FedKEM is a resource-aware FL algorithm, which aggregate an ensemble of local knowledge extracted from edge models. 
+Different from exsisting works which aggregate the weights of each local model, FEDKEM is distilled into a robust global knowledge as the server model through knowledge distillation.![](./logs/figure/overview.png)
 
 **Client local updates**
 ![local updates](./figure/local_updates.png)
@@ -26,13 +26,13 @@ with local model.
 Could server ensemble all the selected client models, and distillate the
 ensemble model's knowledge to cloud model.
 
-In this repository, we provide efficient federated learning experimental evaluation using FedKEMF. 
-We test FedKEMF
+In this repository, we provide efficient federated learning experimental evaluation using FedKEM. 
+We test FedKEM
 on ResNet20, ResNet32, ResNet44, VGG-11/16, and 2-layer simple CNN on various benchmark Non-IID federated learning settings.
 
 ### Usage
 #### Running experiments through using Docker container
-The instruction for build the docker image for FedKEMF can be find in [Docker/README.md](Docker/README.md).
+The instruction for build the docker image for FedKEM can be find in [Docker/README.md](Docker/README.md).
 Please follow the requirements to build the docker image. To reproducing the experiments, please follow the 
 instruction.
 
@@ -70,3 +70,16 @@ To run the multi-model experiments, you need enable the argument `--env=multi-mo
   ```angular2html
 python3 knowlege_aggregation.py --comm_round=400 --k_model='resnet20' --env=multi-model --dataset=cifar100 --batch-size=128 --epochs=20 --n_parties=10 --sample=0.7 --logdir='./logs/'
    ```
+
+### Citation
+
+- FedKEM
+   ```bibtex
+   @inproceedings{nguyen2023fedkem,
+      title={Enhancing Heterogeneous Federated Learning with Knowledge Extraction and Multi-Model Fusion},
+      author={Nguyen, Duy Phuong and Yu, Sixing and Mu\~{n}oz, J. Pablo and Jannesari, Ali},
+      booktitle = {Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis (SC-W)},
+      pages = {36–43},
+      year={2023}
+   }
+
